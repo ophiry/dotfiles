@@ -4,8 +4,9 @@
 	autocrlf = input
 	editor = vim
 [user]
-	name = Orr Sella
+	name = Ophir Yoktan
 	useConfigOnly = true
+	email = ophir@ziprecruiter.com
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]

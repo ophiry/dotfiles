@@ -1,42 +1,9 @@
 #! /bin/bash
 
 export SSHRCD="$SSHHOME/.sshrc.d"
+export XDG_CONFIG_HOME=$SSHRCD
 
-if [ -d "/usr/facebook" ]; then
-  export FB_SERVER="true"
-else
-  export FB_SERVER="false"
-fi
+sudo apt-get install -y fish
 
-# Common
-source $SSHRCD/colors-common
-source $SSHRCD/variables-common
-source $SSHRCD/aliases-common
-source $SSHRCD/functions-common
-source $SSHRCD/prompt-common
-
-# SSH
-source $SSHRCD/colors-ssh
-source $SSHRCD/variables-ssh
-source $SSHRCD/aliases-ssh
-source $SSHRCD/functions-ssh
-source $SSHRCD/prompt-ssh
-
-# User
-if [ "$USER" != "$(whoami)" ]; then
-  USER=$(whoami)
-fi
-
-# Attach screen/tmux upon session creation (comment out one of the two)
-if [[ ! "$TERM" =~ ^screen.* ]] && [ "$TERM" != "nuclide" ] && [ -t 0 ] && [ -z "$TMUX" ]; then
-#   # Screen
-#   if which screen >/dev/null 2>&1; then
-#     screenrc-create-or-attach-session
-#   fi
-
-  # Tmux
-  # if which tmux >/dev/null 2>&1 && [[ "`tmux -V`" == "tmux 1.8" ]]; then
-  if which tmux >/dev/null 2>&1; then
-    tmuxrc-create-or-attach-session
-  fi
-fi
+fish
+exit

@@ -18,7 +18,7 @@
 		"gauge"
 	],
 	"bold_folder_labels": false,
-	"color_scheme": "Packages/Color Scheme - Default/Mac Classic.tmTheme",
+	"color_scheme": "Packages/User/Solarized (dark).tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
